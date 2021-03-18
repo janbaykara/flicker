@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import "./styles.css";
 import useLocalStorage from "@rehooks/local-storage";
+import useKeypress from "react-use-keypress";
 
 const hzToMs = (hz: number) => 1000 / hz;
 const msToHz = (ms: number) => 1000 / ms;
@@ -40,6 +41,9 @@ export default function App() {
       return getOppositePlayerState(playerState);
     });
   }, [setPlayerState, getOppositePlayerState]);
+  useKeypress(" " /* Spacebar */, () => {
+    togglePlayerState();
+  });
 
   // Screen refresh
   const [refreshMs, setRefreshMs] = useState(hzToMs(10));
@@ -147,8 +151,9 @@ export default function App() {
         </div>
         <div className="text-center">
           <button className="text-lg border-2 px-4" onClick={togglePlayerState}>
-            {getOppositePlayerState(playerState)}
+            {getOppositePlayerState(playerState)}{" "}
           </button>
+          <div className="opacity-50">(spacebar)</div>
         </div>
         <div
           className={`grid md:grid-cols-2 gap-6 my-4 ${
