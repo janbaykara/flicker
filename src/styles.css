@@ -6,13 +6,13 @@ html {
 
 input[type="range"] {
   -webkit-appearance: none;
-  background: yellow;
+  background: #999;
 }
 
 input[type="range"]::-webkit-slider-runnable-track {
   width: 300px;
   height: 5px;
-  background: blue;
+  background: #999;
   border: none;
   border-radius: 3px;
 }
@@ -23,7 +23,7 @@ input[type="range"]::-webkit-slider-thumb {
   height: 16px;
   width: 16px;
   border-radius: 50%;
-  background: goldenrod;
+  background: #999;
   margin-top: -4px;
 }
 
@@ -32,5 +32,5 @@ input[type="range"]:focus {
 }
 
 input[type="range"]:focus::-webkit-slider-runnable-track {
-  background: blue;
+  background: #999;
 }
