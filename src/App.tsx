@@ -92,15 +92,14 @@ export default function App() {
         background,
         color: getOppositeBackground(background)
       }}
-      className="w-screen h-screen fixed"
+      className="w-screen h-screen fixed p-6"
     >
-      <div>Refresh time: {refreshMs} ms</div>
       <div className="text-4xl text-center px-6">
-        <div>
-          <b>{msToHz(refreshMs).toFixed(1)} Hz</b>
+        <div className="mb-2">
+          Goal {msToHz(refreshMs).toFixed(1)} Hz / actually{" "}
+          <b>{msToHz(getAvgRefreshMs()).toFixed(1)}</b> Hz
         </div>
-        <div>Actual: {msToHz(getAvgRefreshMs()).toFixed(1)} Hz</div>
-        <code>{JSON.stringify(refreshHistory.current)}</code>
+        {/* <code>{JSON.stringify(refreshHistory.current)}</code> */}
         <input
           className="block w-full"
           type="range"
@@ -116,7 +115,8 @@ export default function App() {
         </button>
       </div>
       <br />
-      <ul>
+      <p>Note: Use Safari for best results.</p>
+      <ul className="opacity-50">
         <li>Gamma (γ) &gt;35 Hz Concentration</li>
 
         <li>
