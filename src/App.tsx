@@ -102,6 +102,7 @@ export default function App() {
         <div>Actual: {msToHz(getAvgRefreshMs()).toFixed(1)} Hz</div>
         <code>{JSON.stringify(refreshHistory.current)}</code>
         <input
+          className="block w-full"
           type="range"
           min={REFRESH_MIN}
           max={REFRESH_MAX}
