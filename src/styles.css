@@ -6,12 +6,13 @@ html {
 
 input[type="range"] {
   -webkit-appearance: none;
+  background: yellow;
 }
 
 input[type="range"]::-webkit-slider-runnable-track {
   width: 300px;
   height: 5px;
-  background: #ddd;
+  background: blue;
   border: none;
   border-radius: 3px;
 }
@@ -31,5 +32,5 @@ input[type="range"]:focus {
 }
 
 input[type="range"]:focus::-webkit-slider-runnable-track {
-  background: #ccc;
+  background: blue;
 }
