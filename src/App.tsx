@@ -237,7 +237,13 @@ export default function App() {
 function AddBookmarkForm({ onSubmit }) {
   const [text, setText] = useState("");
   return (
-    <form onSubmit={() => onSubmit(text)} className="space-y-3">
+    <form
+      onSubmit={(e) => {
+        e.preventDefault();
+        onSubmit(text);
+      }}
+      className="space-y-3"
+    >
       <textarea
         placeholder="Describe what you see."
         className="p-2 text-black block w-full"
